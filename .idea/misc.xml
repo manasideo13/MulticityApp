@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/DynamicLayoutApp/app/src/main/res/drawable/ic_add.xml" value="0.1215" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/DynamicLayoutApp/app/src/main/res/drawable/ic_close.xml" value="0.151" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/DynamicLayoutApp/app/src/main/res/drawable/round_grey.xml" value="0.1215" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/DynamicLayoutApp/app/src/main/res/drawable/round_primary.xml" value="0.1215" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/DynamicLayoutApp/app/src/main/res/layout/activity_cricketers.xml" value="0.25" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/DynamicLayoutApp/app/src/main/res/layout/activity_dynamic_view.xml" value="0.25" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/DynamicLayoutApp/app/src/main/res/layout/activity_main.xml" value="0.12158054711246201" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/DynamicLayoutApp/app/src/main/res/layout/activity_new.xml" value="0.25" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/DynamicLayoutApp/app/src/main/res/layout/item_add_layout.xml" value="0.12158054711246201" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/DynamicLayoutApp/app/src/main/res/layout/pickup_drop_location_layout.xml" value="0.264" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/DynamicLayoutApp/app/src/main/res/layout/row_add_cricketer.xml" value="0.25" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/DynamicLayoutApp/app/src/main/res/layout/row_cricketer.xml" value="0.25" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
