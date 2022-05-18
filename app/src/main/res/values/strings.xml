@@ -4,5 +4,6 @@
     <string name="one_way_outstation">One Way</string>
     <string name="round_trip_outstation">Round Trip</string>
     <string name="find_cars_btn">Find Cars</string>
+    <string name="error">Google Api key is missing.</string>
 
 </resources>

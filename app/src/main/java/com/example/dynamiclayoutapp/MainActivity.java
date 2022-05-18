@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity
 {
     ImageView imgAdd, imgAddClear;
     LinearLayout linearDynamic;
-    //List<View> data = new ArrayList<>();
+
     AutoCompleteTextView autoCompleteTextViewPickup;
     AutocompletePrediction item;
     AutoCompleteAdapter adapter;
@@ -52,50 +52,41 @@ public class MainActivity extends AppCompatActivity
         imgAdd = findViewById(R.id.imgAdd);
         imgAddClear = findViewById(R.id.imgAddClear);
 
+        autoCompleteTextViewPickup = findViewById(R.id.auto_pickup);
 
-
-        autoCompleteTextViewPickup =(AutoCompleteTextView) findViewById(R.id.auto_pickup);
-
-
+        String apiKey = getString(R.string.google_maps_key);
+        if(apiKey.isEmpty())
+        {
+            autoCompleteTextViewPickup.setText(getString(R.string.error));
+            return;
+        }
         /*initialized place sdk*/
         if (!Places.isInitialized()) {
-            Log.d("TAG", "key = " + R.string.google_maps_key);
-            Places.initialize(MainActivity.this, String.valueOf(R.string.google_maps_key));
+            //Log.d("TAG", "key = " + R.string.google_maps_key);
+            Places.initialize(this, apiKey);
         }
 
         /*create new place client instance*/
-        placesClient = Places.createClient(MainActivity.this);
-        adapter = new AutoCompleteAdapter(MainActivity.this, placesClient);
+        placesClient = Places.createClient(this);
+        //Log.d("TAG", "placesClient value = " + placesClient);
+        adapter = new AutoCompleteAdapter(this, placesClient);
 
-
+        /* pickup */
         autoCompleteTextViewPickup.setOnItemClickListener(autocompleteClickListener);
-
-
         autoCompleteTextViewPickup.setAdapter(adapter);
-        //list locate on map
 
-        imgAdd.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v)
-            {
-                imgAdd.setVisibility(View.GONE);
-                imgAddClear.setVisibility(View.VISIBLE);
-                addView();
-            }
-        });
+        /* drop */
 
+
+        /* pickup events */
         autoCompleteTextViewPickup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 autoCompleteTextViewPickup.setSelectAllOnFocus(true);
-
-
                 //Toast.makeText(MainActivity.this, "Pickup called", Toast.LENGTH_SHORT).show();
             }
         });
-
-
 
         autoCompleteTextViewPickup.addTextChangedListener(new TextWatcher() {
             @Override
@@ -115,6 +106,19 @@ public class MainActivity extends AppCompatActivity
                 }
             }
         });
+
+        /* drop events */
+
+
+        imgAdd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v)
+            {
+                imgAdd.setVisibility(View.GONE);
+                imgAddClear.setVisibility(View.VISIBLE);
+                addView();
+            }
+        });
     }
 
     /* autocompletetextview listener for drop down places list display */
@@ -131,7 +135,6 @@ public class MainActivity extends AppCompatActivity
                 /* To specify which data types to return, pass an array of Place.
                 Fields in your FetchPlaceRequest
                 Use only those fields which are required.*/
-
                 List<Place.Field> placeFields = Arrays.asList(Place.Field.ID, Place.Field.NAME, Place.Field.ADDRESS
                         , Place.Field.LAT_LNG);
 
@@ -151,10 +154,9 @@ public class MainActivity extends AppCompatActivity
                                 FetchPlaceResponse places = task.getResult();
                                 final Place place = places.getPlace();
                                 Log.d("TAG", "places = " + place.getAddress());
+                                Log.d("TAG", "places = " + place.getLatLng());
 
                                 /* if pickup flag is true (selected from drop down location) */
-
-
                             }
                             else
                             {
