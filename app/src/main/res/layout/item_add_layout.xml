@@ -16,7 +16,7 @@
         app:layout_constraintBaseline_toTopOf="parent">
 
         <AutoCompleteTextView
-            android:id="@+id/auto_destination"
+            android:id="@+id/addAutoDestination"
             android:layout_width="0dp"
             android:layout_height="45dp"
             android:layout_weight="1"

@@ -84,13 +84,13 @@
         android:layout_height="match_parent"
         android:layout_below="@id/scrollView">
 
-        <!--<fragment
+        <fragment
             android:id="@+id/map"
             xmlns:tools="http://schemas.android.com/tools"
             android:name="com.google.android.gms.maps.SupportMapFragment"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            tools:context=".MainActivity"/>-->
+            tools:context=".MainActivity"/>
 
         <LinearLayout
             android:id="@+id/locationMarker"
@@ -99,7 +99,7 @@
             android:orientation="vertical"
             android:layout_centerInParent="true"
             android:gravity="center"
-            android:visibility="gone">
+            >
 
             <TextView
                 android:id="@+id/txtMarkerText"
@@ -109,14 +109,17 @@
                 android:minWidth="250dp"
                 android:paddingLeft="2dp"
                 android:paddingRight="2dp"
+                android:visibility="gone"
                 android:text=""
                 android:textColor="@android:color/black" />
 
             <ImageView
                 android:id="@+id/imageMarker"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-                <!--android:src="@drawable/add_marker"-->
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:src="@drawable/add_marker"/>
+
         </LinearLayout>
 
     </RelativeLayout>
@@ -127,7 +130,7 @@
         android:layout_alignParentBottom="true">
 
         <LinearLayout
-            android:id="@+id/linearFindCar"
+            android:id="@+id/btnViewCabRoundTrip"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
@@ -154,7 +157,7 @@
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/linearBtnDone"
+            android:id="@+id/linearBtnConfirm"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
@@ -165,7 +168,7 @@
             app:layout_constraintBottom_toBottomOf="parent">
 
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/btnDone"
+                android:id="@+id/btnConfirm"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -178,7 +181,7 @@
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/footer"
+            android:id="@+id/linearFooterButtons"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
